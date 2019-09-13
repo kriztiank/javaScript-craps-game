@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+/******************************
+ general styles
+ ******************************/
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  cursor: url('/cursor.cur'), auto;
+}
+
+body {
+  width: 100%;
+  background: url('/img/craps-table-layout.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+/******************************
+main grid
+ ******************************/
+.wrapper {
+  width: 100%;
+  margin-top: 27px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  grid-gap: 4px;
+  grid-auto-rows: minmax(60px, auto);
+}
+
+/* sub grid */
+.ui-box {
+  grid-row: 3/6;
+  grid-column: 4;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(1fr);
+  grid-auto-rows: minmax(30px, 50px);
+  grid-gap: 5px;
+}
+
+/* counter for dice throws */
+#throw-counter {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+
+/******************************
+dices / placement & styling
+ ******************************/
+.dice-content {
+  grid-column: 3;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dice1,
+.dice2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  width: 60px;
+  height: 60px;
+  background-color: #e31e24;
+  color: white;
+  border: 2px solid white;
+  border-radius: 10%;
+  font-size: 1.2rem;
+}
+.dice2 {
+  margin-top: 5px;
+}
+
+/******************************
+buttons / placement & styling
+ ******************************/
+#rollDice1,
+#rollDice2,
+#point,
+#reset {
+  display: none;
+}
+
+.button-content {
+  grid-column: 1/3;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn {
+  /* Default button styles removed */
+  all: unset;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0.5rem;
+  /* margin-bottom: 10px; */
+  background-color: #e31e24;
+  border: 2px solid white;
+  border-radius: 3%;
+  color: white;
+}
+
+/******************************
+text field / your bet
+ ******************************/
+.ui-bet-text {
+  grid-column: 1/3;
+  grid-row: 2;
+  align-self: center;
+  justify-self: center;
+  color: white;
+}
+
+/**************************************
+text field result / placement & styling
+ **************************************/
+#result {
+  grid-column: 1/3;
+  grid-row: 3;
+  color: white;
+  font-size: 1.2rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.text-output {
+  color: white;
+  grid-column: 1/3;
+  grid-row: 4;
+  align-self: center;
+  justify-self: center;
+}
+
+/******************************
+buttons / place bet / lock bet
+ ******************************/
+#place_bet {
+  grid-column: 1;
+  grid-row: 1;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  justify-self: center;
+}
+
+#lock_bet {
+  grid-column: 2;
+  grid-row: 1;
+  width: 100px;
+  height: 20px;
+  text-align: center;
+  justify-self: center;
+}
+
+/******************************
+help button
+ ******************************/
+.ui-help-button {
+  grid-column: 4;
+  grid-row: 9;
+  text-align: center;
+  justify-self: end;
+  align-self: flex-start;
+}
+
+/******************************
+help button text menu
+ ******************************/
+.tooltip .tooltiptext {
+  visibility: hidden;
+  padding: 6.5rem;
+  width: 1080px;
+  background-color: green;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 1rem;
+  /* Position the tooltip */
+  position: absolute;
+  right: 200px;
+  bottom: 200px;
+  z-index: 100;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

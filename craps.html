@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/craps.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Tæller hvor mange gange terningerne er kastet -->
+      <div id="throw-counter">
+        Throw counter:
+      </div>
+
+      <section class="dice-content">
+        <div id="die1" class="dice1">0</div>
+        <div id="die2" class="dice2">0</div>
+      </section>
+
+      <div class="ui-box">
+        <section class="button-content">
+          <button id="rollDice1" class="button btn" onclick="first_cast()">Roll Dice</button>
+          <button id="rollDice2" class="button btn" onclick="second_cast()">Roll Dice</button>
+          <button id="point" class="button btn" onclick="point_cast()">Point</button>
+          <button id="reset" class="button btn" onclick="reset()">Reset</button>
+        </section>
+
+        <h2 id="result"></h2>
+        <strong id="text-output" class="text-output"></strong>
+
+        <button id="place_bet" class="button btn" onclick="bet_face()">Place a bet</button>
+        <button id="lock_bet" class="button btn" onclick="lock_bet()">Lock a bet</button>
+
+        <div class="ui-bet-text">
+          <div id="bet-counter">Your bet:</div>
+        </div>
+      </div>
+
+      <div class="ui-help-button">
+        <button class="button btn tooltip">
+          Help
+          <span class="tooltiptext">
+            <h2>Help to play Craps</h2>
+            <p>The game starts with you placing your bet after that the dices a rolled.</p>
+            <p>If you hit 7 or 11 on your first throw you get your bet back and get to throw again.</p>
+            <p>If you hit 2,3 or 12 you lose your bet and the game restart again.</p>
+            <p>And if you hit 4,5,6,8,9 or 10 that number becomes your point.</p>
+            <p>When you have your point you will have to hit that number again to get double up on you bet.</p>
+            <p>But if you hit 7 when you have your point you lose your bet restart again.</p>
+          </span>
+        </button>
+      </div>
+    </div>
+
+    <script src="js/craps.js"></script>
+  </body>
+</html>
